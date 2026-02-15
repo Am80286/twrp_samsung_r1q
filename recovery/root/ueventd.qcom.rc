@@ -62,7 +62,7 @@ firmware_directories /vendor/firmware_mnt/image/ /vendor/firmware-modem/image/
 /dev/drb	              0660   system     radio
 
 #permissions for USB
-/dev/usb_mtp_gadget      0660     system        mtp
+/dev/usb_mtp              0660     system        mtp
 /sys/class/android_usb/android0  f_rndis/ethaddr      0660  system   system
 /sys/class/android_usb/android0  terminal_version     0660  system   system
 

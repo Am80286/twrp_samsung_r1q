@@ -97,8 +97,8 @@ LZMA_RAMDISK_TARGETS := recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_TREE)/recovery.fstab
 
 # Crypto
-TW_INCLUDE_CRYPTO := true
-TW_INCLUDE_FBE := true
+# TW_INCLUDE_CRYPTO := true
+# TW_INCLUDE_FBE := true
 
 # TWRP specific build flags
 TW_THEME := portrait_hdpi

@@ -14,6 +14,8 @@
 # limitations under the License.
 #
 
+DEVICE_TREE=device/samsung/r1q
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -53,17 +55,12 @@ BOARD_SECOND_OFFSET      := 0x00f00000
 BOARD_NAME               := SRPSA18B002
 BOARD_HEADER_VERSION     := 1
 BOARD_MKBOOTIMG_ARGS     := --kernel_offset $(BOARD_KERNEL_OFFSET) --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET) --second_offset $(BOARD_SECOND_OFFSET) --header_version $(BOARD_HEADER_VERSION) --board $(BOARD_NAME)
-TARGET_PREBUILT_KERNEL := device/samsung/r1q/Image.gz-dtb
-TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-TARGET_KERNEL_HEADER_ARCH := arm64
 BOARD_KERNEL_SEPARATED_DTBO := true
-TARGET_KERNEL_CLANG_COMPILE := true
 BOARD_INCLUDE_RECOVERY_DTBO := true
-BOARD_PREBUILT_DTBOIMAGE := device/samsung/r1q/dtbo
 
-# QCOM
-#TARGET_USE_SDCLANG := true
+# Prebuilts
+TARGET_PREBUILT_KERNEL := $(DEVICE_TREE)/prebuilts/Image.gz-dtb
+BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_TREE)/prebuilts/dtbo
 
 # Avb
 BOARD_AVB_ENABLE := true
@@ -96,9 +93,8 @@ TARGET_COPY_OUT_VENDOR := vendor
 # Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 BOARD_HAS_LARGE_FILESYSTEM := true
-BOARD_INCLUDE_RECOVERY_DTBO := true
 LZMA_RAMDISK_TARGETS := recovery
-TARGET_RECOVERY_FSTAB := device/samsung/r1q/recovery.fstab
+TARGET_RECOVERY_FSTAB := $(DEVICE_TREE)/recovery.fstab
 
 # Crypto
 TW_INCLUDE_CRYPTO := true

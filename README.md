@@ -1,5 +1,8 @@
 # Samsung Galaxy A80 (R1Q) TWRP Device Tree
 
+This tree is now moved to official TWRP github available [here](https://github.com/TeamWin/android_device_samsung_r1q).
+Latest images are on the [offical TWRP website](https://github.com/TeamWin/android_device_samsung_r1q) as well.
+
 ## Building
 
 This device tree is built using TWRP's minimal manifests, which are available [here](https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni).
